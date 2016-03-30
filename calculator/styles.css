@@ -1,0 +1,46 @@
+.scrollable-menu {
+  height: auto;
+  max-height: 200px;
+  overflow-x: hidden;
+}
+
+table {
+  width: 100%;
+}
+
+.modal-footer {
+  text-align: center;
+}
+
+td {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+td.tdExclude {
+  border-bottom: none;
+}
+
+.main {
+  text-align: center;
+}
+
+body {
+  background-image: url(images/backgroundrep.jpg);
+  background-attachment:fixed;
+  margin: 20px;
+}
+
+.panel-primary {
+  padding-left: 0px;
+  padding-right:0px;
+  margin:auto;
+  float:none;
+}
+
+.mainPanel {
+  padding-top: 20px;
+}
+
+.panel-heading {
+  text-align: center;
+}
