@@ -16,7 +16,8 @@ if (($_POST['fname'] === '') ||
     // check for missing file
     if ($_FILES['photo'] != "") {
         // check file size is less then 2 mb
-        if ($_FILES["photo"]["size"] < 2) {
+		// BUGFIX: Size is in bytes so convert to mb
+        if ($_FILES["photo"]["size"] < (2*1024*1024)) {
             // check for exsiting file
             $fname = "";
             if (file_exists("./uploads/" . $_FILES['photo']['name'])){
@@ -40,8 +41,8 @@ if (($_POST['fname'] === '') ||
 
             // save file to server
             if (@copy($_FILES['photo']['tmp_name'], "./uploads/" . $fname)) {
-
-                $imgpath = "upload/" . $fname;
+				// BUGFIX: Corrected path to uploads directory
+                $imgpath = "uploads/" . $fname;
                 $imgname = $fname;
                 $errorMsg = "";
 
@@ -75,7 +76,7 @@ function addNewStudent($courses) {
         $coursefile = "./courses/" . strtolower(str_replace(" ", "",$val));
         file_put_contents($coursefile, $name . "\n", FILE_APPEND);
     }
-    sendConfirmation();
+    //sendConfirmation();
 }
 
 function sendConfirmation() {

@@ -4,6 +4,9 @@ $cookie_color_name = 'background';
 $cookie_nag_name = 'nag';
 $expire = time() + (60 * 5);
 
+// BUGFIX: initialized number of attempts
+$attempts = 0;
+
 $bcolor = "#FFF"; // default bacground color
 
 // check for page load without POST

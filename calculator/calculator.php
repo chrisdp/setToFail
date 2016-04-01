@@ -140,7 +140,8 @@ if ($total !== 0.0) {
                         </tr>
                         <tr>
                           <td>Total: </td>
-                          <td><?php echo '$' . number_format($total); ?></td>
+						  <?php // BUGFIX: format number to 2 decimal places ?>
+                          <td><?php echo '$' . number_format($total, 2); ?></td>
                         </tr>
                         <tr>
                           <td class="tdExclude">Ip:</td>

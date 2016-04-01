@@ -1,15 +1,16 @@
 <?php
 
+// BUGFIX: Changed all instances of $_POST to $_GET
+if (isset($_GET['redirect'])){
+	$result = "PHP eh? Noice!!!";
+} else if (isset($_GET['redirect2'])) {
+	$result = "JSP eh? DEEEEECENT!";
+} else if (isset($_GET['redirect3'])) {
+	$result = "ASP.Net? Awesome Possum!!!";
+}
 
-    if (isset($_POST['redirect'])){
-        $result = "PHP eh? Noice!!!";
-    } else if (isset($_POST['redirect2'])) {
-        $result = "JSP eh? DEEEEECENT!";
-    } else if (isset($_POST['redirect3'])) {
-        $result = "ASP.Net? Awesome Possum!!!";
-    }
+$browser = $_SERVER['HTTP_USER_AGENT'];
 
-    $browser = $_SERVER['HTTP_USER_AGENT'];
 ?>
 <!DOCTYPE html>
 <html>
